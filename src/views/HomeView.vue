@@ -1,7 +1,7 @@
 <template>
   <main class="">
   <div>
-    <h1 class="flex justify-center items-center text-6xl">Take Away notebook</h1>
+    <h1 class="flex justify-center items-center text-3xl">Take Away notebook</h1>
     <p class="flex justify-center items-center mt-4">hello everyone here is ther platform to record your diary</p>
     <form @submit.prevent="addItem" class="flex flex-col justify-center items-center">
       <h1 class="text-3xl">add your diary</h1>
