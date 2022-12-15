@@ -12,12 +12,19 @@
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
          
-        <button @click="updateItem(index)" class="gap-4 p-5 m-4 bg-green-400 rounded-lg">Edit</button>
-        <button @click="deleteItem(index)" class="gap-4 p-5 bg-green-400 rounded-lg">Delete</button>
+        <button @click="updateItem(index)" class=" items-center justify-start p-5 m-4 bg-green-400 rounded-lg">Edit</button>
+        <button @click="deleteItem(index)" class=" items-center justify-start p-5 bg-green-400 rounded-lg">Delete</button>
        
       </li>
     </ul>
   </div>
+
+<footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400 justify-center"><span class=" text-green-500">© cossing wing001@2022</span> . All Rights Reserved.
+    </span>
+     
+</footer>
+
   </main>
 </template>
 
