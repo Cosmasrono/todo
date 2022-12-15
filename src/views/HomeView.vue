@@ -2,18 +2,19 @@
   <main class="">
   <div>
     <h1 class="flex justify-center items-center text-6xl">Todo list</h1>
+    <p class="flex justify-center items-center mt-4">hello everyone here is ther platform to record your diary</p>
     <form @submit.prevent="addItem" class="flex flex-col justify-center items-center">
       <h1 class="text-3xl">add your diary</h1>
-      <input type="text" v-model="newItem" placeholder="Add a new item" required/>
-      <button class="p-5 bg-green-400 rounded-lg">Add your diary</button>
+      <input type="text" v-model="newItem" class="p-7 mt-3 text-black bg-green-400" placeholder="Add a new diary" required/>
+      <button class="p-5 mt-10 bg-green-400 rounded-lg">Add your diary</button>
     </form>
     <ul>
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
-        <div class="">
-        <button @click="updateItem(index)" class="gap-4 p-5 bg-green-400 rounded-lg">Edit</button>
+         
+        <button @click="updateItem(index)" class="gap-4 p-5 m-4 bg-green-400 rounded-lg">Edit</button>
         <button @click="deleteItem(index)" class="gap-4 p-5 bg-green-400 rounded-lg">Delete</button>
-      </div>
+       
       </li>
     </ul>
   </div>
@@ -31,13 +32,21 @@ export default {
   methods: {
     addItem() {
       this.items.push(this.newItem)
-      this.newItem = ''
+      this.newItem = '',
+      localStorage.setItem('items', JSON.stringify(this.items));
     },
     updateItem(index) {
       this.items[index] = prompt('Update item:', this.items[index])
     },
     deleteItem(index) {
       this.items.splice(index, 1)
+      console.log(index);
+    }
+  },
+  mounted() {
+    const storedTodos= localStorage.getItem('items');
+    if (storedTodos) {
+      this.items = JSON.parse(storedTodos);
     }
   }
 }

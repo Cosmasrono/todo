@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'  */
 
 <template>
   <main class=""> 
-      <nav class="flex gap-5 justify-end py-3 text-white bg-green-500">
+      <nav class="flex gap-5 justify-end pr-5 text-white bg-green-500">
     
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
